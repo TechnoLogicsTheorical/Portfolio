@@ -1,0 +1,341 @@
+/* Selecteur Simples */
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+a {
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+}
+/* Selecteur ROOT pour les variables */
+
+:root {
+    --blue-color:#2589FC;
+    --purple-color:#8C4DFC;
+    --red-color:#B63F3F;
+}
+
+/* Generiques Classes */
+.fl {display: flex;}
+.fl-jc-ct {justify-content: center;}
+.fl-al-ct {align-items:center;}
+
+/* Navigation bar */
+#navbar {
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 80px;
+    background-color: #fc252571;
+    z-index: 1;
+}
+
+#navbar ul {
+    list-style: none;
+}
+
+#navbar ul li{
+    display: inline;
+    padding: auto 15px;
+    margin: 0 20px;
+}
+
+
+/* Introduction section */
+#introduction {
+    height: calc(100vh - 10px);
+    border-bottom: 10px solid var(--red-color);
+}
+
+#introduction .container-left {
+    width: 50vw;
+    background: rgb(37,137,252);
+    background: linear-gradient(148deg, rgba(37,137,252,1) 0%, rgba(140,77,252,1) 100%);
+    position: relative;
+}
+
+#introduction img {
+    width: 40%;
+    position: absolute;
+    bottom: 0;
+    left: 12.5vw;
+}
+
+#introduction h1 {
+    color: var(--red-color);
+    font-size: 2.5em;
+    position: relative;
+}
+
+#introduction h1::before {
+    background-color: var(--red-color);
+    content: '';
+    width: 150px;
+    height: 15px;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    transform: skewX(-29deg);
+}
+
+#introduction p {
+    font-size: 1.5em;
+}
+
+#introduction .container-right {
+    width: 50vw;
+    flex-direction: column;
+}
+
+#introduction .container-right .container-text {
+    width: 75%;
+}
+
+#introduction .container-right .container-text .btn_discorver {
+    text-transform: uppercase;
+    margin-top: 100px;
+    background-color: var(--red-color);
+    float: right;
+}
+
+.btn {
+    padding: 10px 35px;
+    border-radius: 50px;
+}
+
+/* Separeur */
+.separator {
+    color: var(--red-color);
+    font-size: 1.5em;
+}
+
+/* Competences section */
+
+#competence {
+    width: 80vw;
+    margin: 25px auto;
+    flex-direction: column;
+}
+
+.separator h2::before, .separator h2::after {
+    content: "★";
+    margin: 0 25px;
+}
+
+.separator h2 {
+    padding: 25px;
+    border-top: 5px solid var(--red-color);
+    border-bottom: 5px solid var(--red-color);
+    text-transform: uppercase;
+}
+
+/* progress bar */
+#competence .container-progress {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+#competence .container-progress .group-progress {
+    width: calc(50% - 100px);
+    margin: 15px 50px;
+}
+
+#competence .container-progress .group-progress label{
+    display: inline-block;
+    font-size: 1.25em;
+    text-transform: uppercase;
+}
+
+#competence .container-progress .group-progress progress {
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 20px;
+    padding: 3px;
+    border-radius: 20px;
+    box-shadow: 0 1px 0 rgba(255,255,255,.2); 
+}
+
+#competence .container-progress .group-progress progress::-webkit-progress-bar {
+    height: 20px;
+    border-radius: 20px;
+    background-color:#ffffff00;
+    border: 2px solid #d46e6e;
+}
+#competence .container-progress .group-progress progress::-webkit-progress-value {
+    height: 17px;
+    background-color:var(--red-color);
+    border-radius: 20px;
+}
+#competence .container-progress .group-progress progress::-moz-progress-bar {
+    height: 20px;
+    border-radius: 20px;
+    background-color:#ffffff00;
+}
+
+/* Section trauvaux */
+
+#works {
+    flex-direction: column;
+    width: 100%;
+    margin:50px auto;
+}
+
+#works .group-project:first-child {
+    margin-top:80px;
+}
+
+#works .group-project {
+    width: 100%;
+    height: 800px;
+}
+
+#works .group-project .container-image {
+    background: var(--blue-color);
+    /* width: calc(50% - 150px); */
+    width: 60%;
+    height: 100%;
+    /* position: relative; */
+}
+/* 
+#works .group-project .container-image::after {
+    content: '';
+    position: absolute;
+    background-color: var(--blue-color);
+    right: -150px;
+    width: 150px;
+    height: 100%;
+    z-index: 99;
+    clip-path: polygon(0 0, 100% 0%, 73% 100%, 0% 100%);
+} */
+
+#works .group-project .container-image img {
+    width: 80%;
+}
+
+#works .group-project .container-text {
+    background: var(--red-color);
+    width: 40%;
+    height: 100%;
+}
+
+#works .group-project .container-text .text {
+    font-size: 1.5em;
+    background-color: yellowgreen;
+    width: 80%;
+    height: 80%;
+    color: white;
+    border-radius: 25px;
+    padding: 20px;
+    
+}
+
+#works .group-project .container-text .btn_work {
+    font-size: 24px;
+    margin: 20px 25px;
+    padding: 7px 25px;
+    border: 2px solid white;
+}
+
+/* about me */
+
+#about_me {
+    flex-direction: column;
+    width: 100%;
+    margin:50px auto;
+   
+}
+#about_me #history {
+    margin: 50px 0;
+    width: 100%;
+    font-size: 1.75em;
+}
+#about_me #history h2 {
+    color: var(--red-color);
+    position: relative;
+    border-bottom:  10px solid var(--red-color);
+    display: inline-block;
+    padding-bottom: 15px;
+    margin: 75px 0 0 0;
+}
+ #about_me #history h2::before {
+    background-color: var(--red-color);
+    content: '';
+    width: 200px;
+    height: 15px;
+    position: absolute;
+    top: -25px;
+    left: -100px;
+    transform: skewX(-29deg);
+} 
+
+#about_me #history .image-container img {
+    border-radius: 50px;
+    border: 5px solid var(--red-color);
+    width: 80%;
+    margin: 50px 0;
+}
+
+#about_me #history .image-container {
+    width: 50%;
+    margin: 50px;
+}
+
+#about_me #history .container-text {
+    width: 50%;
+    margin-right: 50px;
+}
+
+#about_me #cv {
+    width: 100%;
+}
+
+#about_me #cv .box-container {
+    background: lightgray;
+    width: 30%;
+    border-radius: 20px;
+    border: 2px solid rgb(143, 143, 143);
+    padding: 25px;
+    margin: 0 250px
+}
+
+#about_me #cv .box-container p {
+    font-size: 2em;
+}
+
+#about_me #cv .box-container img {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.fl-dir-cl {
+    flex-direction: column;
+}
+
+.form-container {
+    background-color: lightgray;
+    padding: 25px;
+    border: 2px solid gray;
+    border-radius: 20px;
+}
+
+.form-container input {
+    padding: 7px 10px;
+    margin: 15px;
+}
+
+/* footer */
+
+footer { 
+    background-color: lightgray;
+    margin: 100px 0 0 0;
+    height: 100px;
+    font-size: 2em;
+}
